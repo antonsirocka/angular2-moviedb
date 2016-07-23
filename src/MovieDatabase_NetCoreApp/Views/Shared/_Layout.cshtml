@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link asp-href-include="~/css/*.css" rel="stylesheet" />
+    @*<link rel="stylesheet" href="~/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/Site2.css" />*@
+    <script asp-src-include="~/js/jquery.js"></script>
+    <script asp-src-include="~/js/bootstrap.js"></script>
+
+    <script asp-src-include="~/js/angular/es6-shim.min.js"></script>
+    <script asp-src-include="~/js/angular/shims_for_IE.js"></script>
+    <script asp-src-include="~/js/angular/system-polyfills.js"></script>
+    <script asp-src-include="~/js/angular/angular2-polyfills.js"></script>
+    <script asp-src-include="~/js/angular/Reflect.js"></script>
+    <script asp-src-include="~/js/angular/system.js"></script>
+    <script asp-src-include="~/js/angular/rx.js"></script>
+
+    <script src="systemjs.config.js"></script>
+
+    <script>
+      System.import('app').catch(function(err){ console.error(err); });
+    </script>
+
+    <script type="text/javascript">
+      var appInsights=window.appInsights||function(config){
+        function r(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i)})}}var t={config:config},u=document,e=window,o="script",s=u.createElement(o),i,f;s.src=config.url||"//az416426.vo.msecnd.net/scripts/a/ai.0.js";u.getElementsByTagName(o)[0].parentNode.appendChild(s);try{t.cookie=u.cookie}catch(h){}for(t.queue=[],i=["Event","Exception","Metric","PageView","Trace","Dependency"];i.length;)r("track"+i.pop());return r("setAuthenticatedUserContext"),r("clearAuthenticatedUserContext"),config.disableExceptionTracking||(i="onerror",r("_"+i),f=e[i],e[i]=function(config,r,u,e,o){var s=f&&f(config,r,u,e,o);return s!==!0&&t["_"+i](config,r,u,e,o),s}),t
+        }({
+            instrumentationKey:"6cc52109-fcd1-49d5-bc71-d27f3cb53254"
+        });
+
+        window.appInsights=appInsights;
+        appInsights.trackPageView();
+    </script>
+</head>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

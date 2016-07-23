@@ -8,4 +8,4 @@ A simple app for managing a film library built using Angular 2 (rc2) with Typesc
 5. Run migrations to create database tables (PM> update-database).
 6. Run/Debug in Visual Studio 2015.
 
-App published at http://angular2moviedb.azurewebsites.net
+Working version of the app is published at http://angular2moviedb.azurewebsites.net

@@ -1,0 +1,108 @@
+﻿body {
+	font-family:'Open Sans', Arial, sans-serif;
+	font-size:14px;
+	font-weight:300;
+	line-height:1.6em;
+	color:#656565;
+	overflow-x:hidden;
+ }
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#main-content {
+    min-height: 800px;
+}
+
+@media (min-width: 1200px) {
+    .film-reel-bg {
+        background: url(../assets/film-reel-df998.jpg) no-repeat top left;
+    }
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.thead-inverse th {
+    color: #fff;
+    background-color: #373a3c;
+}
+.tbody-row {
+    background-color: #ffffff;
+}
+.line-through {
+    text-decoration: line-through;
+}
+
+/*===========================
+  --- Header & menu ----
+=========================== */
+.main-menu {
+	background-color:#242424;	
+}
+
+.dropdown ul.nav li a {
+	color:#fff;
+
+}
+
+.dropdown ul.nav li a:hover {
+	color:#428bca;
+
+}
+
+h1 a.navbar-brand {
+	font-size: 25px;
+	color: #fff;
+	font-weight: 700;
+	text-shadow: none;
+	margin-bottom: 10px;
+	margin-top:-10px;
+}
+
+span {
+	color:#428bca;
+}
+.nav-pills  {
+    float: right;
+	font-weight:800;
+	color:#fff;
+}
+ul.nav-pills  {
+	margin-top:10px;
+	color:fff;
+	padding:5px;
+}
+
+.nav-pills > li > a {
+  border-radius: 0px;
+}
+.nav-pills > li + li {
+  margin-left: 7px;
+}
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+  color: #fff;
+  background-color: #EEE;
+}
+.nav-pills > li.active > a{
+	background-color: #428bca;
+}
+
+.nav-pills > li.active > a:focus {
+	background-color: #000;
+}
+
+
+.slider {
+	margin-top:10px;
+	margin-bottom:-30px;
+}

@@ -1,5 +1,5 @@
 # angular2-moviedb
-A simple app for managing film entries built using Angular 2 (rc2) with Typescript, ASP.NET Core 1.0, MVC 6 and Entity Framework Core.
+A simple app for managing a film library built using Angular 2 (rc2) with Typescript, ASP.NET Core 1.0, MVC 6 and Entity Framework Core.
 
 1. Clone repository
 2. NPM install

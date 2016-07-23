@@ -7,3 +7,5 @@ A simple app for managing film entries built using Angular 2 (rc2) with Typescri
 4. Update connection strings in appsettings.json to point to your local database.
 5. Run migrations to create database tables (PM> update-database).
 6. Run/Debug in Visual Studio 2015.
+
+App published at http://angular2moviedb.azurewebsites.net

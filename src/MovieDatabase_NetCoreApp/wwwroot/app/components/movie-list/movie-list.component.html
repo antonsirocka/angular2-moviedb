@@ -1,0 +1,45 @@
+﻿<div class="row">
+    <div class="col-md-6">
+        <button class="ConfirmAddRecordButton" (click)="addNewEntry()">Add new entry</button>
+        <!--<button (click)="reloadList()">Reload list</button>-->
+        <modal (modalOutput)="getModalOutputData($event)">
+        </modal>
+        <alert (alertOutput)="confirmAlertClose($event)">
+        </alert>
+    </div>
+</div>
+<div class="row" style="margin-top: 20px;">
+    <div class="col-md-12">
+        <div class="table-responsive">
+            <table class="table tbody-row" id="tblMovieList">
+                <thead class="thead-inverse">
+                    <tr>
+                        <th>Title</th>
+                        <th>IMDB Url</th>
+                        <th>Year released</th>
+                        <th>Rating</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody class="" *ngFor="let movieRecord of movieRecords">
+                    <tr>
+                        <td [class.line-through]="movieRecord.watched"><a href="#" (click)="showMovieRecord(movieRecord)">{{movieRecord.title}}</a></td>
+                        <td><a href="{{movieRecord.imdbUrl}}" target="_blank">IMDB</a></td>
+                        <td>{{movieRecord.year_released}}</td>
+                        <td>{{movieRecord.rating}}</td>
+                        <td>
+                            <button class="EditRecordButton" (click)="editRecord(movieRecord)">Edit</button>
+                            <button class="DeleteRecordButton" (click)="deleteRecord(movieRecord)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="5"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+

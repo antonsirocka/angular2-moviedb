@@ -1,0 +1,45 @@
+﻿<div class="row">
+    <div class="col-md-6">
+
+        <div *ngIf="movieRecord.description">
+            <label class="control-label">Description</label>
+            <p>
+                {{movieRecord.description}}
+            </p>
+        </div>
+
+        <div *ngIf="movieRecord.imdbUrl">
+            <label class="control-label">IMDB</label>
+            <p>
+                <a href="{{movieRecord.imdbUrl}}" target="_blank">{{movieRecord.imdbUrl}}</a>
+            </p>
+        </div>
+
+        <div *ngIf="movieRecord.rating">
+            <label class="control-label">Rating</label>
+            <p>
+                {{movieRecord.rating}}
+            </p>
+        </div>
+
+        <div *ngIf="movieRecord.year_released">
+            <label class="control-label">Year released</label>
+            <p>
+                {{movieRecord.year_released}}
+            </p>
+        </div>
+
+        <div>
+            <button *ngIf="!movieRecord.watched" type="button" (click)="markAsWatched()" class="btn btn-danger custom-btn">Seen / cross off list</button>
+            <button *ngIf="movieRecord.watched" type="button" (click)="markAsUnwatched()" class="btn btn-danger custom-btn">Not seen yet / put back on list</button>
+        </div>
+    </div>
+    <div class="col-md-6">
+      <img src="{{movieRecord.coverUrl}}" alt="cover" />
+    </div>
+</div>
+<div class="row text-center" style="margin-top: 20px;">
+    <movie-score [upVotes]="upVoteCount" [downVotes]="downVoteCount" (scoringOutput)="processVote($event)"></movie-score>
+</div>
+
+<error-notification [errorMessage]="errorMessage"></error-notification>

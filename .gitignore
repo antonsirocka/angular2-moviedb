@@ -3,3 +3,5 @@
 ################################################################################
 
 /src/MovieDatabase_NetCoreApp/obj/Debug/netcoreapp1.0
+/src/MovieDatabase_NetCoreApp/node_modules
+/src/MovieDatabase_NetCoreApp/bin/Debug/netcoreapp1.0

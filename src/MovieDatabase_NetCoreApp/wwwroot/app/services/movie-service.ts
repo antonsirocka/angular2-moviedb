@@ -81,7 +81,7 @@ export class MovieService {
             "Description": movieRecord.description,
             "ImdbUrl": movieRecord.imdbUrl,
             "CoverUrl": movieRecord.coverUrl,
-            'Rating': null
+            'Rating': {}
         };        
 
         if (movieRecord.rating) {
@@ -111,7 +111,7 @@ export class MovieService {
         }
     }
 
-    markAsWatched(movieRecordId) {
+    markAsWatched(movieRecordId: any) {
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');
 
@@ -123,7 +123,7 @@ export class MovieService {
             })
     }
 
-    markAsUnwatched(movieRecordId) {
+    markAsUnwatched(movieRecordId: any) {
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');
 
@@ -135,7 +135,7 @@ export class MovieService {
             })
     }
 
-    upvoteMovie(movieRecordId) {
+    upvoteMovie(movieRecordId: any) {
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');
 
@@ -147,7 +147,7 @@ export class MovieService {
             })
     }
 
-    downvoteMovie(movieRecordId) {
+    downvoteMovie(movieRecordId : any) {
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');
 

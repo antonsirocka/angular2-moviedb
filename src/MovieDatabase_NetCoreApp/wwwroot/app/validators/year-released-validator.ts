@@ -1,20 +1,22 @@
-﻿import { Control } from '@angular/common';
-import { Directive, provide } from '@angular/core';
-import { NG_VALIDATORS } from '@angular/common';
+﻿import { FormControl } from '@angular/forms';
+import { Directive } from '@angular/core';
+import { NG_VALIDATORS } from '@angular/forms';
 
 @Directive({
     selector: '[validateYearReleased][ngControl]',
     providers: [
-        provide(NG_VALIDATORS, {
-            useValue: checkValidYearRange,
-            multi: true
-        })
+        {
+            provide:
+                NG_VALIDATORS,
+                useValue: checkValidYearRange,
+                multi: true            
+        }
     ]
 })
 
 export class YearReleasedValidator { }
 
-function checkValidYearRange(c: Control) {
+function checkValidYearRange(c: FormControl) {
 
     if (c.value == "") {
         return null;

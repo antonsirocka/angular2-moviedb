@@ -4,7 +4,7 @@ import {MovieService} from '../../services/movie-service';
 @Component({
     selector: 'movie-rating-selector',
     template: `
-        <select #sel (change)="select.emit(sel.value)">
+        <select #sel (change)="select.emit(sel.value)" name="rating">
             <option *ngFor="let rating of ratings" [selected]="rating.selected == true">{{rating.name}}</option>
         </select>`
 })

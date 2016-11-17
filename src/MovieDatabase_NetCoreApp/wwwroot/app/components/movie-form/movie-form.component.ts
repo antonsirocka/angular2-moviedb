@@ -1,5 +1,5 @@
 ﻿import { Component, OnInit, AfterViewInit, ViewChild, Inject } from '@angular/core';
-import { NgForm }    from '@angular/common';
+//import { NgForm }    from '@angular/common';
 import { MovieRecord } from '../../interfaces/movie-record';
 import { MovieService } from '../../services/movie-service';
 import { MovieRecordModelFactory } from '../../factories/movie-record-model-factory';
@@ -12,8 +12,7 @@ import { APP_CONFIG_TOKEN } from '../../app-config';
 
 @Component({
     selector: 'movie-form',
-    templateUrl: 'app/components/movie-form/movie-form.component.html',
-    directives: [YearReleasedValidator, ErrorNotification, MovieRatingSelector]
+    templateUrl: 'app/components/movie-form/movie-form.component.html'
 })
 
 export class MovieFormComponent implements OnInit, AfterViewInit {
@@ -57,7 +56,7 @@ export class MovieFormComponent implements OnInit, AfterViewInit {
             });
     }
 
-    displayError(err) {
+    displayError(err : any) {
         if (err._body) {
             this.errorMessage = err._body;
         }

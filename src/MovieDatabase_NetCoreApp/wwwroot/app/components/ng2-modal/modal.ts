@@ -1,4 +1,5 @@
-import {Component, ViewEncapsulation, ViewContainerRef, ComponentRef, DynamicComponentLoader, ElementRef, Input, EventEmitter, Output, Injector, ViewChild} from '@angular/core';
+import { Component, ViewEncapsulation, ViewContainerRef, ComponentRef, ElementRef, Input, EventEmitter, Output, Injector, ViewChild } from '@angular/core';
+import { ComponentFactoryResolver } from '@angular/core';
 import {Open} from './open.component';
 
 @Component({
@@ -31,9 +32,7 @@ import {Open} from './open.component';
   </div>
 `,
   providers: [],
-  directives: [Open],
-  encapsulation: ViewEncapsulation.None,
-  pipes: []
+  encapsulation: ViewEncapsulation.None
 })
 /**
   * API to an open modal window.
@@ -100,20 +99,23 @@ export class Modal{
     * or when close method is called.
     */
   @Output() public modalOutput:EventEmitter<any> = new EventEmitter();
-  constructor(private dcl: DynamicComponentLoader) {
+  constructor(private resolver: ComponentFactoryResolver) {
   }
   /**
        * Opens a modal window creating backdrop.
        * @param component The angular Component that is to be loaded dynamically(optional).
        */
-  open(component?, model?){
+  open(component?: any, model?: any){
     this.isOpen = true;
 
     if (component) {
-        this.component = this.dcl.loadNextToLocation(component, this.modalMessageContainer);
+        //this.component = this.dcl.loadNextToLocation(component, this.modalMessageContainer);
+        const factory = this.resolver.resolveComponentFactory(component);
+        this.component = this.modalMessageContainer.createComponent(factory);
     }
 
     if (model) {
+        //(<any>this.component).instance.model = model;
         this.modalContentObject = model;
     }
   }
@@ -139,10 +141,10 @@ export class Modal{
   dispose(){
     this.isOpen = false;
     if (this.component != undefined) {
-        this.component.then((componentRef: ComponentRef<any>) => {
-            componentRef.destroy();
-            return componentRef;
-         });
+        //this.component.then((componentRef: ComponentRef<any>) => {
+            this.component.destroy();
+            return this.component;
+         //});
     }
   }
 }

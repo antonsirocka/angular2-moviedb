@@ -19,16 +19,15 @@ import {APP_CONFIG_TOKEN} from '../../app-config';
 
 @Component({
     selector: 'movie-list',
-    templateUrl: 'app/components/movie-list/movie-list.component.html',
-    directives: [Modal, Alert]
+    templateUrl: 'app/components/movie-list/movie-list.component.html'
 })
 
 export class MovieListComponent implements OnInit, AfterViewInit, AfterViewChecked, AfterContentInit, OnChanges {
     movieRecords: Array<MovieRecord> = [];
     appConfig: AppConfig;
     initialLoadCompleted: boolean;
-    @ViewChild(Alert) alert;
-    @ViewChild(Modal) modal;
+    @ViewChild(Alert) alert : any;
+    @ViewChild(Modal) modal : any;
     @Input() loggedInUsername: string;
     constructor(
         private _movieService: MovieService,
@@ -40,20 +39,20 @@ export class MovieListComponent implements OnInit, AfterViewInit, AfterViewCheck
         this.appConfig = config;
     }
 
-    getModalOutputData(data) {
+    getModalOutputData(data : any) {
         if (data == "ReloadMovieList") {
             this.getMovieRecords();
         }
     }
 
-    confirmAlertClose(data) {
+    confirmAlertClose(data : any) {
     }
 
     getMovieRecords(initialLoad: boolean = false) {
         this.movieRecords = [];
 
-        this._spinner.start(this.viewContainerRef).then(spinnerCompRef => {
-            this._spinner.set(spinnerCompRef);
+        //this._spinner.start(this.viewContainerRef).then((spinnerCompRef: any) => {
+            //this._spinner.set(spinnerCompRef);
 
             this._movieService
                 .getMovieRecords()
@@ -69,12 +68,12 @@ export class MovieListComponent implements OnInit, AfterViewInit, AfterViewCheck
                 },
                 err => {
                     this.displayError(err);
-                    this._spinner.stop();
+                    //this._spinner.stop();
                 },
                 () => {
-                    this._spinner.stop();
+                    //this._spinner.stop();
                 });
-        });
+        //});
     }
 
     reloadList() {
@@ -152,7 +151,7 @@ export class MovieListComponent implements OnInit, AfterViewInit, AfterViewCheck
         this.modal.open(MovieFormComponent, newMovieRecordModel._movieRecord);
     }
 
-    displayError(err) {
+    displayError(err : any) {
 
         let errorMessage: string;
 

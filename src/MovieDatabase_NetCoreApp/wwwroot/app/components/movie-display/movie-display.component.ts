@@ -10,8 +10,7 @@ import { ErrorNotification } from '../error-notification/error-notification.comp
 
 @Component({
     selector: 'movie-record-display',
-    templateUrl: 'app/components/movie-display/movie-display.component.html',
-    directives: [MovieScoreComponent, ErrorNotification]
+    templateUrl: 'app/components/movie-display/movie-display.component.html'
 })
 
 export class MovieDisplayComponent implements OnInit {
@@ -88,7 +87,7 @@ export class MovieDisplayComponent implements OnInit {
         }
     }
 
-    displayError(err) {
+    displayError(err : any) {
         if (err._body) {
             this.errorMessage = err._body;
         }

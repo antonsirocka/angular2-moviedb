@@ -1,6 +1,6 @@
 ﻿import {Component, ViewChild} from '@angular/core';
 import { Http, Headers } from '@angular/http';
-import { CORE_DIRECTIVES, FORM_DIRECTIVES } from '@angular/common';
+//import { CORE_DIRECTIVES, FORM_DIRECTIVES } from '@angular/common';
 import {Modal} from '../ng2-modal/modal';
 import {SpinnerService} from '../../services/spinner-service';
 import {LoginService} from '../../services/login-service';
@@ -8,8 +8,7 @@ import { ErrorNotification } from '../error-notification/error-notification.comp
 
 @Component({
     selector: 'register',
-    templateUrl: 'app/components/register/register.component.html',
-    directives: [ErrorNotification]
+    templateUrl: 'app/components/register/register.component.html'
 })
 
 export class Register {
@@ -22,7 +21,7 @@ export class Register {
         private _spinner: SpinnerService) {
     }
 
-    register(username, password, key) {
+    register(username: string, password: string, key: string) {
 
         this._loginService.register(username, password, key)
             .subscribe(
@@ -35,7 +34,7 @@ export class Register {
             });
     }
 
-    displayError(err) {
+    displayError(err: any) {
         if (err._body) {
             this.errorMessage = err._body;
         }

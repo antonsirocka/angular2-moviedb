@@ -5,3 +5,16 @@
 /src/MovieDatabase_NetCoreApp/obj/Debug/netcoreapp1.0
 /src/MovieDatabase_NetCoreApp/node_modules
 /src/MovieDatabase_NetCoreApp/bin/Debug/netcoreapp1.0
+/src/MovieDatabase_NetCoreApp/wwwroot/js/angular/upgrade
+/src/MovieDatabase_NetCoreApp/wwwroot/js/angular/router-deprecated
+/src/MovieDatabase_NetCoreApp/wwwroot/js/angular/router
+/src/MovieDatabase_NetCoreApp/wwwroot/js/angular/platform-browser-dynamic
+/src/MovieDatabase_NetCoreApp/wwwroot/js/angular/platform-browser
+/src/MovieDatabase_NetCoreApp/wwwroot/js/angular/http
+/src/MovieDatabase_NetCoreApp/wwwroot/js/angular/core
+/src/MovieDatabase_NetCoreApp/wwwroot/js/angular/compiler
+/src/MovieDatabase_NetCoreApp/wwwroot/js/angular/common
+/src/MovieDatabase_NetCoreApp/bin/Release/netcoreapp1.0
+/src/MovieDatabase_NetCoreApp/obj
+/src/MovieDatabase_NetCoreApp/Properties/PublishProfiles
+/src/MovieDatabase_NetCoreApp/Service References/Application Insights

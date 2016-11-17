@@ -12,7 +12,7 @@ export class MovieMockedService extends MovieService {
             { "id": '2', "title": "Spotlight", 'year_released': '2016', 'rating': 'R', 'imdbUrl': '', 'coverUrl': '', 'description': 'some description', 'watched': false, 'priority': 0, 'votes': [] }
         ];
 
-        var result = Observable.create(observer => {
+        var result = Observable.create((observer: any) => {
             observer.next(MOVIERECORDS);
             observer.complete();
         });
@@ -29,7 +29,7 @@ export class MovieMockedService extends MovieService {
             { "Name": "R" }
         ];
 
-        return Observable.create(observer => {
+        return Observable.create((observer: any) => {
             observer.next(MOVIERATINGS);
             observer.complete();
         });
@@ -39,38 +39,38 @@ export class MovieMockedService extends MovieService {
 
         let savedMovieRecord = movieRecord;
 
-        return Observable.create(observer => {
+        return Observable.create((observer: any) => {
             observer.next(savedMovieRecord);
             observer.complete();
         });
     }
 
     deleteMovieRecord(movieRecord: MovieRecord) {
-        return Observable.create(observer => {
+        return Observable.create((observer: any) => {
             observer.complete();
         });
     }
 
-    markAsWatched(movieRecordId) {
-        return Observable.create(observer => {
+    markAsWatched(movieRecordId: any) {
+        return Observable.create((observer: any) => {
             observer.complete();
         });
     }
 
-    markAsUnwatched(movieRecordId) {
-        return Observable.create(observer => {
+    markAsUnwatched(movieRecordId: any) {
+        return Observable.create((observer: any) => {
             observer.complete();
         });
     }
 
-    upvoteMovie(movieRecordId) {
-        return Observable.create(observer => {
+    upvoteMovie(movieRecordId: any) {
+        return Observable.create((observer: any) => {
             observer.complete();
         });
     }
 
-    downvoteMovie(movieRecordId) {
-        return Observable.create(observer => {
+    downvoteMovie(movieRecordId: any) {
+        return Observable.create((observer: any) => {
             observer.complete();
         });
     }

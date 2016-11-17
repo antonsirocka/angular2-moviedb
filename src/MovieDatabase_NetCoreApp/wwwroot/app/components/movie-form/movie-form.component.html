@@ -5,7 +5,7 @@
         <div class="form-group">
             <label for="title" class="control-label">Movie title</label>
             <input class="form-control" required type="text" autofocus placeholder="Title"
-                   [(ngModel)]="movieRecord.title" ngControl="title" #title="ngForm">
+                   [(ngModel)]="movieRecord.title" name="title" #title="ngModel">
             <div [hidden]="title.valid || title.pristine" class="alert alert-danger">
                 Title is required
             </div>
@@ -14,25 +14,25 @@
         <div class="form-group">
             <label for="description" class="control-label">Description</label>
             <input class="form-control" type="text" placeholder="description"
-                   [(ngModel)]="movieRecord.description" ngControl="description">
+                   [(ngModel)]="movieRecord.description" name="description" ngControl="description">
         </div>
 
         <div class="form-group">
             <label for="imdbUrl" class="control-label">IMDB URL</label>
             <input class="form-control" type="text" placeholder="ImdbUrl"
-                   [(ngModel)]="movieRecord.imdbUrl" ngControl="imdbUrl">
+                   [(ngModel)]="movieRecord.imdbUrl" name="imdbUrl">
         </div>
 
         <div class="form-group">
             <label for="coverUrl" class="control-label">Cover URL</label>
             <input class="form-control" type="text" placeholder="CoverUrl"
-                   [(ngModel)]="movieRecord.coverUrl" ngControl="coverUrl">
+                   [(ngModel)]="movieRecord.coverUrl" name="coverUrl">
         </div>
 
         <div class="form-group">
             <label for="year_released" class="control-label">Year released</label>
             <input class="form-control" validateYearReleased type="number" autofocus placeholder="Year released"
-                   [(ngModel)]="movieRecord.year_released" ngControl="year_released" #yearReleased="ngForm">
+                   [(ngModel)]="movieRecord.year_released" name="year_released" #yearReleased="ngModel">
             <div *ngIf="movieRecordForm?.controls?.year_released?.hasError('yearReleasedValid') && movieRecordForm?.controls?.year_released?.touched" class="alert alert-danger">
                 Please enter a number in a valid range (1000 - 2999).
             </div>
@@ -44,7 +44,6 @@
         </div>
 
         <div class="form-group">
-            <!--<button type="submit" (click)="login(name.value, pwd.value)" class="btn btn-primary custom-btn">Login</button>-->
             <button type="button" (click)="close()" class="btn btn-primary custom-btn">Cancel</button>
             <button type="submit" class="btn btn-primary custom-btn" [disabled]="!movieRecordForm.form.valid">Submit</button>
         </div>

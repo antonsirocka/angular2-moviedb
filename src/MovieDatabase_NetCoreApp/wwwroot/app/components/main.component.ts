@@ -25,20 +25,19 @@ import {Register} from '../components/register/register.component';
         { provide: SpinnerService, useClass: SpinnerService },
         { provide: MovieRecordModelFactory, useClass: MovieRecordModelFactory },
         { provide: LoginService, useClass: LoginService }
-    ],
-    directives: [MovieListComponent, Modal, Alert]
+    ]
 })
 
 export class MainComponent implements OnInit {    
 
     loggedInUsername: string = null;
 
-    @ViewChild(Alert) alert;
-    @ViewChild(Modal) modal;
+    @ViewChild(Alert) alert : any;
+    @ViewChild(Modal) modal : any;
     constructor(private _loginService: LoginService) {        
     }
 
-    getModalOutputData(data) {
+    getModalOutputData(data : any) {
         if (data) {
             if (data.username) {
                 this.loggedInUsername = data.username;        
@@ -49,7 +48,7 @@ export class MainComponent implements OnInit {
         }
     }
 
-    confirmAlertClose(data) {
+    confirmAlertClose(data : any) {
     }
 
     openLoginDialog() {
